@@ -45,7 +45,8 @@ def get_coco_from_labelme_folder(
         # Taken from https://github.com/fcakyon/labelme2coco/pull/17
         data = load_json(json_path)
         # get image size
-        image_path = str(Path(json_path).parent / data["imagePath"])
+        # image_path = str(Path(json_path).parent / data["imagePath"])
+        image_path = str(data["imagePath"])
         # use the image sizes provided by labelme (they already account for
         # things such as EXIF orientation)
         width = data["imageWidth"]
